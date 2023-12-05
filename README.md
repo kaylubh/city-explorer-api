@@ -39,14 +39,14 @@
 
 2. #### Weather
 
-    Estimate of time needed to complete:
-    Start time:
+    Estimate of time needed to complete: 1 hour
+    Start time: 6:17pm
     Finish time:
     Actual time needed to complete:
 
 3. #### Errors
 
-    Estimate of time needed to complete:
+    Estimate of time needed to complete: 30 mins
     Start time:
     Finish time:
     Actual time needed to complete:
