@@ -19,7 +19,7 @@
 
 ### [0.1.1](https://github.com/kaylubh/city-explorer-api/pull/2)
 
-
+12-06-2023 5:18pm - Add basic error handling
 
 ### [0.1.0](https://github.com/kaylubh/city-explorer-api/pull/1)
 
@@ -52,6 +52,6 @@
 3. #### Errors
 
     Estimate of time needed to complete: 30 mins
-    Start time:
-    Finish time:
-    Actual time needed to complete:
+    Start time: 4:58pm
+    Finish time: 5:18pm
+    Actual time needed to complete: 20mins

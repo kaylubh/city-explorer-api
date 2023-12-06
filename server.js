@@ -39,15 +39,29 @@ app.get('/weather', (request, response) => {
   const lat = request.query.lat;
   const lon = request.query.lon;
 
-  const cityData = weatherData.find(forecastData =>
-    forecastData.city_name === searchQuery ||
-    forecastData.lat === lat ||
-    forecastData.lon === lon
-  );
+  try {
+    const cityData = weatherData.find(forecastData =>
+      forecastData.city_name === searchQuery ||
+      forecastData.lat === lat ||
+      forecastData.lon === lon
+    );
 
-  const cityForecasts = cityData.data.map( (forecast) => new Forecast(forecast.datetime, forecast.weather.description));
+    const cityForecasts = cityData.data.map((forecast) => new Forecast(forecast.datetime, forecast.weather.description));
 
-  response.status(200).send(cityForecasts);
+    response.status(200).send(cityForecasts);
+  } catch (error) {
+    next(error);
+  }
 });
 
+app.get('*', notFound);
+
 // error handling
+
+function notFound(request, response) {
+  response.status(404).send('Nothing to See Here');
+}
+
+function errorHandler(error, request, response, next) {
+  response.send(500).send('Unable to process this request');
+}
