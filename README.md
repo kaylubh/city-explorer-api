@@ -20,6 +20,7 @@
 ### 0.1.0
 
 12-04-2023 5:46pm - Set up repository
+12-04-2023 7:53pm - Create weather forecast data API
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->

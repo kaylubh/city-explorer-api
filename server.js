@@ -37,10 +37,10 @@ app.get('/weather', (request, response) => {
   const lat = request.query.lat;
   const lon = request.query.lon;
 
-  const cityData = weatherData.find(forecast =>
-    forecast.city_name === searchQuery ||
-    forecast.lat === lat ||
-    forecast.lon === lon
+  const cityData = weatherData.find(forecastData =>
+    forecastData.city_name === searchQuery ||
+    forecastData.lat === lat ||
+    forecastData.lon === lon
   );
 
   const cityForecasts = cityData.data.map( (forecast) => new Forecast(forecast.datetime, forecast.weather.description));
