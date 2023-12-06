@@ -34,6 +34,14 @@ app.get('/weatherRequest', (request, response) => {
   const searchQuery = request.query.searchQuery;
   const lat = request.query.lat;
   const lon = request.query.lon;
+
+  const cityForecast = weatherData.find(forecast =>
+    forecast.city_name === searchQuery ||
+    forecast.lat === lat ||
+    forecast.lon === lon
+  );
+
+  response.status(200).send(cityForecast);
 });
 
 // error handling
