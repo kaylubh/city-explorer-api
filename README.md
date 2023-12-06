@@ -17,14 +17,14 @@
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
-### 0.1.1
+### [0.1.1](https://github.com/kaylubh/city-explorer-api/pull/2)
 
 
 
 ### [0.1.0](https://github.com/kaylubh/city-explorer-api/pull/1)
 
-12-04-2023 5:46pm - Set up repository
-12-04-2023 7:53pm - Create weather forecast data API
+12-05-2023 5:46pm - Set up repository
+12-05-2023 7:53pm - Create weather forecast data API
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
