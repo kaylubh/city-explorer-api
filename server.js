@@ -18,6 +18,8 @@ app.listen(PORT, () => {
 
 // middleware
 
+app.use(cors());
+
 class Forecast {
 
   constructor(date, description) {
