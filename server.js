@@ -1,6 +1,6 @@
-'use strict';
-// dependencies
+// import env vars
 require('dotenv').config();
+// dependencies
 const cors = require('cors');
 const axios = require('axios');
 // express
@@ -82,7 +82,7 @@ function notFound(request, response) {
 }
 
 function errorHandler(error, request, response, next) {
-  response.send(500).send('Unable to process this request');
+  response.status(500).send('Unable to process this request');
 }
 
 // start
