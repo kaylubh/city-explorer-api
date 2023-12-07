@@ -7,10 +7,11 @@ const axios = require('axios');
 const express = require('express');
 const app = express();
 // API KEYS
-const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
 const MOVIE_API_KEY = process.env.MOVIE_API_KEY;
 // port
 const PORT = process.env.PORT || 3001;
+// modules
+const getCurrentWeather = require('./lib/weatherAPI');
 
 // middleware
 app.use(cors());
@@ -24,20 +25,7 @@ app.get('/movies', getMovies);
 app.get('*', notFound);
 
 // helper functions
-async function getCurrentWeather(request, response) {
-  const lat = request.query.lat;
-  const lon = request.query.lon;
 
-  const url = `https://api.weatherbit.io/v2.0/current?key=${WEATHER_API_KEY}&lat=${lat}&lon=${lon}`;
-
-  try {
-    const weatherResponse = await axios.get(url);
-    const currentWeather = weatherResponse.data.data.map((element) => new Weather(element));
-    response.status(200).send(currentWeather);
-  } catch (error) {
-    next(error);
-  }
-}
 
 async function getMovies(request, response) {
   const cityName = request.query.cityName;
@@ -54,18 +42,7 @@ async function getMovies(request, response) {
 }
 
 // classes
-class Weather {
-  constructor(obj) {
-    this.description = obj.weather.description;
-    this.temp = obj.temp;
-    this.feelsTemp = obj.app_temp;
-    this.humidity = obj.rh;
-    this.windSpeed = obj.wind_spd;
-    this.windGust = obj.gust;
-    this.cloudCoverage = obj.clouds;
-    this.rain = obj.precip;
-  }
-}
+
 
 class Movie {
   constructor(obj) {
