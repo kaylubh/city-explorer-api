@@ -28,7 +28,7 @@ function notFound(request, response) {
 }
 
 function errorHandler(error, request, response, next) { //eslint-disable-line
-  response.status(500).send('Unable to process this request');
+  response.status(500).send(`Server Error: ${error}`);
 }
 
 // start
