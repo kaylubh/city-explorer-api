@@ -17,10 +17,11 @@
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
-### 0.2.0
+### [0.2.0](https://github.com/kaylubh/city-explorer-api/pull/3)
 
 12-06-2023 9:11pm - Update weather API to get live data
 12-06-2023 11:03pm - Create movies API
+12-07-2023 12:32am - Deploy remote server
 
 ### [0.1.1](https://github.com/kaylubh/city-explorer-api/pull/2)
 
@@ -81,5 +82,5 @@
 
     Estimate of time needed to complete: 20 mins
     Start time: 11:55pm
-    Finish time:
-    Actual time needed to complete:
+    Finish time: 12:32am
+    Actual time needed to complete: 37 mins

@@ -20,25 +20,6 @@ app.get('/', (request, response) => {
   response.send('Hello from the other side');
 });
 app.get('/weather', getCurrentWeather);
-// app.get('/weather', (request, response) => {
-//   const searchQuery = request.query.searchQuery;
-//   const lat = request.query.lat;
-//   const lon = request.query.lon;
-
-//   try {
-//     const cityData = weatherData.find(forecastData =>
-//       forecastData.city_name === searchQuery ||
-//       forecastData.lat === lat ||
-//       forecastData.lon === lon
-//     );
-
-//     const cityForecasts = cityData.data.map((forecast) => new Forecast(forecast.datetime, forecast.weather.description));
-
-//     response.status(200).send(cityForecasts);
-//   } catch (error) {
-//     next(error);
-//   }
-// });
 app.get('/movies', getMovies);
 app.get('*', notFound);
 
@@ -68,7 +49,7 @@ async function getMovies(request, response) {
     const movies = movieResponse.data.results.map((result) => new Movie(result));
     response.status(200).send(movies);
   } catch (error) {
-    // next(error);
+    next(error);
   }
 }
 
