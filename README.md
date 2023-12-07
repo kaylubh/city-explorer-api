@@ -72,7 +72,7 @@
 2. #### Movies API
 
     Estimate of time needed to complete: 45 mins
-    Start time:
+    Start time: 10:07pm
     Finish time:
     Actual time needed to complete:
 

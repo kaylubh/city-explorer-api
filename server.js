@@ -1,5 +1,4 @@
 'use strict';
-
 // dependencies
 require('dotenv').config();
 const cors = require('cors');
@@ -9,21 +8,18 @@ const express = require('express');
 const app = express();
 // API KEYS
 const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
+const MOVIE_API_KEY = process.env.MOVIE_API_KEY;
 // port
 const PORT = process.env.PORT || 3001;
 
 // middleware
-
 app.use(cors());
 
 // routes
-
 app.get('/', (request, response) => {
   response.send('Hello from the other side');
 });
-
 app.get('/weather', getCurrentWeather);
-
 // app.get('/weather', (request, response) => {
 //   const searchQuery = request.query.searchQuery;
 //   const lat = request.query.lat;
@@ -43,11 +39,10 @@ app.get('/weather', getCurrentWeather);
 //     next(error);
 //   }
 // });
-
+app.get('/movies', getMovies);
 app.get('*', notFound);
 
 // helper functions
-
 async function getCurrentWeather(request, response) {
   const lat = request.query.lat;
   const lon = request.query.lon;
@@ -56,17 +51,27 @@ async function getCurrentWeather(request, response) {
 
   try {
     const weatherResponse = await axios.get(url);
-    console.log(weatherResponse.data);
     const currentWeather = weatherResponse.data.data.map((element) => new Weather(element));
-    console.log(currentWeather);
     response.status(200).send(currentWeather);
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function getMovies(request, response) {
+  const cityName = request.query.cityName;
+
+  const url = `https://api.themoviedb.org/3/search/movie?api_key=${MOVIE_API_KEY}&query=${cityName}&include_adult=false&page=1`;
+
+  try {
+    const movieResponse = await axios.get(url);
+    response.status(200).send(movieResponse.data.results);
   } catch (error) {
     // next(error);
   }
 }
 
 // classes
-
 class Weather {
   constructor(obj) {
     this.description = obj.weather.description;
@@ -80,16 +85,7 @@ class Weather {
   }
 }
 
-// class Forecast {
-
-//   constructor(date, description) {
-//     this.date = date;
-//     this.description = description;
-//   }
-// }
-
 // error handling
-
 function notFound(request, response) {
   response.status(404).send('Nothing to See Here');
 }
@@ -99,7 +95,6 @@ function errorHandler(error, request, response, next) {
 }
 
 // start
-
 app.listen(PORT, () => {
   console.log('The server is ALIVE');
 });
