@@ -91,6 +91,7 @@ class Movie {
     this.title = obj.title;
     this.description = obj.overview;
     this.imageSrc = `https://image.tmdb.org/t/p/w92${obj.poster_path}`;
+    this.id = obj.id;
   }
 }
 
