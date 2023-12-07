@@ -1,7 +1,7 @@
 # City Explorer API
 
 **Author**: Caleb Hemphill
-**Version**: 0.2.0
+**Version**: 0.3.0
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
@@ -16,6 +16,8 @@
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+
+### 0.3.0
 
 ### [0.2.0](https://github.com/kaylubh/city-explorer-api/pull/3)
 
@@ -84,3 +86,12 @@
     Start time: 11:55pm
     Finish time: 12:32am
     Actual time needed to complete: 37 mins
+
+### Lab 09
+
+1. #### Modularize
+
+    Estimate of time needed to complete: 30 mins
+    Start time: 5:23pm
+    Finish time:
+    Actual time needed to complete:
