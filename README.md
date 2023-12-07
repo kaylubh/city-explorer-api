@@ -17,7 +17,7 @@
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
-### 0.3.0
+### [0.3.0](https://github.com/kaylubh/city-explorer-api/pull/5)
 
 12-07-2023 5:36pm - Refactor weather API into a module
 12-07-2023 5:42pm - Refactor movies API into a module
@@ -96,5 +96,5 @@
 
     Estimate of time needed to complete: 30 mins
     Start time: 5:23pm
-    Finish time:
-    Actual time needed to complete:
+    Finish time: 5:49pm
+    Actual time needed to complete: 26 mins
