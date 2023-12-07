@@ -63,7 +63,7 @@
 1. #### Weather API
 
     Estimate of time needed to complete: 30 mins
-    Start time:
+    Start time: 7:59pm
     Finish time:
     Actual time needed to complete:
 

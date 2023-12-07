@@ -8,25 +8,14 @@ const express = require('express');
 const app = express();
 // data
 const weatherData = require('./data/weather.json');
-
+// API KEYS
+const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
 // port
 const PORT = process.env.PORT || 3001;
-
-app.listen(PORT, () => {
-  console.log('The server is ALIVE');
-});
 
 // middleware
 
 app.use(cors());
-
-class Forecast {
-
-  constructor(date, description) {
-    this.date = date;
-    this.description = description;
-  }
-}
 
 // routes
 
@@ -56,6 +45,18 @@ app.get('/weather', (request, response) => {
 
 app.get('*', notFound);
 
+// helper functions
+
+// classes
+
+class Forecast {
+
+  constructor(date, description) {
+    this.date = date;
+    this.description = description;
+  }
+}
+
 // error handling
 
 function notFound(request, response) {
@@ -65,3 +66,9 @@ function notFound(request, response) {
 function errorHandler(error, request, response, next) {
   response.send(500).send('Unable to process this request');
 }
+
+// start
+
+app.listen(PORT, () => {
+  console.log('The server is ALIVE');
+});
