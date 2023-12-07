@@ -2,7 +2,6 @@
 require('dotenv').config();
 // dependencies
 const cors = require('cors');
-const axios = require('axios');
 // express
 const express = require('express');
 const app = express();
@@ -23,22 +22,12 @@ app.get('/weather', getCurrentWeather);
 app.get('/movies', getMovies);
 app.get('*', notFound);
 
-// helper functions
-
-
-
-
-// classes
-
-
-
-
 // error handling
 function notFound(request, response) {
   response.status(404).send('Nothing to See Here');
 }
 
-function errorHandler(error, request, response, next) {
+function errorHandler(error, request, response, next) { //eslint-disable-line
   response.status(500).send('Unable to process this request');
 }
 
