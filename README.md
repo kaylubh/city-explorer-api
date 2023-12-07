@@ -80,6 +80,6 @@
 3. #### Deploy
 
     Estimate of time needed to complete: 20 mins
-    Start time:
+    Start time: 11:55pm
     Finish time:
     Actual time needed to complete:
