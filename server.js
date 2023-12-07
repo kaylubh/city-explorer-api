@@ -65,7 +65,8 @@ async function getMovies(request, response) {
 
   try {
     const movieResponse = await axios.get(url);
-    response.status(200).send(movieResponse.data.results);
+    const movies = movieResponse.data.results.map((result) => new Movie(result));
+    response.status(200).send(movies);
   } catch (error) {
     // next(error);
   }
@@ -82,6 +83,14 @@ class Weather {
     this.windGust = obj.gust;
     this.cloudCoverage = obj.clouds;
     this.rain = obj.precip;
+  }
+}
+
+class Movie {
+  constructor(obj) {
+    this.title = obj.title;
+    this.description = obj.overview;
+    this.imageSrc = `https://image.tmdb.org/t/p/w92${obj.poster_path}`;
   }
 }
 

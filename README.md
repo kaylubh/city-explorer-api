@@ -20,6 +20,7 @@
 ### 0.2.0
 
 12-06-2023 9:11pm - Update weather API to get live data
+12-06-2023 11:03pm - Create movies API
 
 ### [0.1.1](https://github.com/kaylubh/city-explorer-api/pull/2)
 
@@ -73,8 +74,8 @@
 
     Estimate of time needed to complete: 45 mins
     Start time: 10:07pm
-    Finish time:
-    Actual time needed to complete:
+    Finish time: 11:03pm
+    Actual time needed to complete: 56 mins
 
 3. #### Deploy
 
