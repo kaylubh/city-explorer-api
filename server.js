@@ -3,11 +3,10 @@
 // dependencies
 require('dotenv').config();
 const cors = require('cors');
+const axios = require('axios');
 // express
 const express = require('express');
 const app = express();
-// data
-const weatherData = require('./data/weather.json');
 // API KEYS
 const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
 // port
@@ -23,39 +22,71 @@ app.get('/', (request, response) => {
   response.send('Hello from the other side');
 });
 
-app.get('/weather', (request, response) => {
-  const searchQuery = request.query.searchQuery;
-  const lat = request.query.lat;
-  const lon = request.query.lon;
+app.get('/weather', getCurrentWeather);
 
-  try {
-    const cityData = weatherData.find(forecastData =>
-      forecastData.city_name === searchQuery ||
-      forecastData.lat === lat ||
-      forecastData.lon === lon
-    );
+// app.get('/weather', (request, response) => {
+//   const searchQuery = request.query.searchQuery;
+//   const lat = request.query.lat;
+//   const lon = request.query.lon;
 
-    const cityForecasts = cityData.data.map((forecast) => new Forecast(forecast.datetime, forecast.weather.description));
+//   try {
+//     const cityData = weatherData.find(forecastData =>
+//       forecastData.city_name === searchQuery ||
+//       forecastData.lat === lat ||
+//       forecastData.lon === lon
+//     );
 
-    response.status(200).send(cityForecasts);
-  } catch (error) {
-    next(error);
-  }
-});
+//     const cityForecasts = cityData.data.map((forecast) => new Forecast(forecast.datetime, forecast.weather.description));
+
+//     response.status(200).send(cityForecasts);
+//   } catch (error) {
+//     next(error);
+//   }
+// });
 
 app.get('*', notFound);
 
 // helper functions
 
-// classes
+async function getCurrentWeather(request, response) {
+  const lat = request.query.lat;
+  const lon = request.query.lon;
 
-class Forecast {
+  const url = `https://api.weatherbit.io/v2.0/current?key=${WEATHER_API_KEY}&lat=${lat}&lon=${lon}`;
 
-  constructor(date, description) {
-    this.date = date;
-    this.description = description;
+  try {
+    const weatherResponse = await axios.get(url);
+    console.log(weatherResponse.data);
+    const currentWeather = weatherResponse.data.data.map((element) => new Weather(element));
+    console.log(currentWeather);
+    response.status(200).send(currentWeather);
+  } catch (error) {
+    // next(error);
   }
 }
+
+// classes
+
+class Weather {
+  constructor(obj) {
+    this.description = obj.weather.description;
+    this.temp = obj.temp;
+    this.feelsTemp = obj.app_temp;
+    this.humidity = obj.rh;
+    this.windSpeed = obj.wind_spd;
+    this.windGust = obj.gust;
+    this.cloudCoverage = obj.clouds;
+    this.rain = obj.precip;
+  }
+}
+
+// class Forecast {
+
+//   constructor(date, description) {
+//     this.date = date;
+//     this.description = description;
+//   }
+// }
 
 // error handling
 
