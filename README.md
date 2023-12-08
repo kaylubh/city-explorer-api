@@ -17,7 +17,7 @@
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
-### 0.4.0
+### [0.4.0](https://github.com/kaylubh/city-explorer-api/pull/6)
 
 12-08-2023 3:25pm - Add status route to update client status component on connection to server
 
