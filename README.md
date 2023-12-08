@@ -21,6 +21,7 @@
 
 12-07-2023 5:36pm - Refactor weather API into a module
 12-07-2023 5:42pm - Refactor movies API into a module
+12-07-2023 9:38pm - Update movies API to filter and respond with more relevant movies
 
 ### [0.2.0](https://github.com/kaylubh/city-explorer-api/pull/3)
 
