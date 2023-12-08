@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 3001;
 const getCurrentWeather = require('./lib/weatherAPI');
 const getMovies = require('./lib/moviesAPI');
 const ping = require('./lib/ping');
+const status = require('./lib/status');
 
 // middleware
 app.use(cors());
@@ -20,6 +21,7 @@ app.get('/', (request, response) => {
   response.send('Hello from the other side');
 });
 app.get('/ping', ping);
+app.get('/status', status);
 app.get('/weather', getCurrentWeather);
 app.get('/movies', getMovies);
 app.get('*', notFound);

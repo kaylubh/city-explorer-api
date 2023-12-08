@@ -1,7 +1,7 @@
 # City Explorer API
 
 **Author**: Caleb Hemphill
-**Version**: 0.3.0
+**Version**: 0.4.0
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
@@ -16,6 +16,10 @@
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+
+### [0.4.0](https://github.com/kaylubh/city-explorer-api/pull/6)
+
+12-08-2023 3:25pm - Add status route to update client status component on connection to server
 
 ### [0.3.0](https://github.com/kaylubh/city-explorer-api/pull/5)
 
