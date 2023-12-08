@@ -19,6 +19,8 @@
 
 ### 0.5.0
 
+12-08-2023 6:07pm - Store weather API responses in a cache
+
 ### [0.4.0](https://github.com/kaylubh/city-explorer-api/pull/6)
 
 12-08-2023 3:25pm - Add status route to update client status component on connection to server
@@ -111,6 +113,6 @@
 1. #### Caching
 
     Estimate of time needed to complete: 1.5 hours
-    Start time:
+    Start time: 5:40pm
     Finish time:
     Actual time needed to complete:
