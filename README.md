@@ -1,7 +1,7 @@
 # City Explorer API
 
 **Author**: Caleb Hemphill
-**Version**: 0.4.0
+**Version**: 0.5.0
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
@@ -16,6 +16,11 @@
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+
+### 0.5.0
+
+12-08-2023 6:07pm - Store weather API responses in a cache
+12-08-2023 6:25pm - Store movies API responses in a cache
 
 ### [0.4.0](https://github.com/kaylubh/city-explorer-api/pull/6)
 
@@ -103,3 +108,12 @@
     Start time: 5:23pm
     Finish time: 5:49pm
     Actual time needed to complete: 26 mins
+
+### Lab 10
+
+1. #### Caching
+
+    Estimate of time needed to complete: 1.5 hours
+    Start time: 5:40pm
+    Finish time: 7:00pm
+    Actual time needed to complete: 1 hour 20 mins
