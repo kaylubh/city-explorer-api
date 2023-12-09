@@ -20,6 +20,7 @@
 ### 0.5.0
 
 12-08-2023 6:07pm - Store weather API responses in a cache
+12-08-2023 6:25pm - Store movies API responses in a cache
 
 ### [0.4.0](https://github.com/kaylubh/city-explorer-api/pull/6)
 
